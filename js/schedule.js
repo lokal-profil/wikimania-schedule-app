@@ -77,7 +77,7 @@ function Schedule(options) {
                 // show sessions in a space based on space slug in URL
                 schedule.displaySessionsOfSpace(pageID);
                 break;
-            case "_pathways": 
+            case "_pathways":
                 // shows list of all pathways
                 schedule.displayPathwaysList();
                 break;
@@ -162,7 +162,7 @@ function Schedule(options) {
         // add session information to the page
         targetBlock.append(template(templateData));
     }
-    
+
     // remove all placeholder "Open" blocks on page
     schedule.clearOpenBlocks = function() {
         var openBlocks = schedule.$container.find('.open-block').parent();
@@ -744,9 +744,9 @@ function Schedule(options) {
     }
 
     // utility function to track events in Google Analytics
-    schedule.trackEvent = function(action, label) {
-        ga('send', 'event', 'Schedule App', action, label);
-    }
+    //schedule.trackEvent = function(action, label) {
+    //    ga('send', 'event', 'Schedule App', action, label);
+    //}
 
     // utility function to pass into templates for nice typography
     schedule.smartypants = function(str) {
