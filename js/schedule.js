@@ -626,7 +626,7 @@ function Schedule(options) {
             var clicked = $(this).data('session');
 
             // track interaction in Google Analytics
-            schedule.trackEvent('Session Detail Opened', clicked);
+            // schedule.trackEvent('Session Detail Opened', clicked);
             // update the hash for proper routing
             schedule.updateHash('session-'+clicked);
             schedule.getSessionDetail(clicked);
@@ -684,11 +684,11 @@ function Schedule(options) {
             if (clicked.hasClass('favorite-active')) {
                 // if favorited, add the session ID to savedSessionIDs
                 schedule.savedSessionIDs.push(sessionID);
-                schedule.trackEvent('Session Faved', sessionID);
+                // schedule.trackEvent('Session Faved', sessionID);
             } else {
                 // otherwise, we have unfavorited, so remove the saved ID
                 schedule.savedSessionIDs = _.without(schedule.savedSessionIDs, sessionID);
-                schedule.trackEvent('Session Unfaved', sessionID);
+                // schedule.trackEvent('Session Unfaved', sessionID);
                 // if we're actually *on* the "Favorites" tab,
                 // we need to remove this element from the page
                 if (schedule.chosenTab == 'favorites') {
@@ -718,7 +718,7 @@ function Schedule(options) {
             schedule.updateHash(clicked);
 
             schedule.chosenTab = clicked.replace('show-','');
-            schedule.trackEvent('Tab change', schedule.chosenTab);
+            // schedule.trackEvent('Tab change', schedule.chosenTab);
             schedule.loadChosenTab();
         });
 
