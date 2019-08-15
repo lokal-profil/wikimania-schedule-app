@@ -120,7 +120,7 @@ h1 {
 h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #B94D60;
+    color: #205C2E;
     margin-top: 0;
 }
 
@@ -176,7 +176,7 @@ header a {
     text-transform: uppercase;
 }
 #schedule-controls a.active {
-    background-color: #D93F5F;
+    background-color: #205C2E;
 }
 
 .schedule-tab,
@@ -186,6 +186,7 @@ header a {
 
 .page-caption h2 {
     text-transform: uppercase;
+    color: inherit;
 }
 
 .schedule-tab h3,
@@ -196,11 +197,12 @@ header a {
     margin: 7rem 0 5rem 0;
     text-align: center;
     z-index: 1;
+    clear: both;
 }
 .schedule-tab h3 span,
 .page-caption h3 span {
     font-family: "Open Sans", sans-serif;
-    color: #B94D60;
+    color: #205C2E;
     background-color: #fff;
     padding: 0 2rem;
     font-size: 3rem;
@@ -208,12 +210,29 @@ header a {
 .schedule-tab h3:before,
 .page-caption h3:before {
     content: "";
-    border-top: 1px solid #B94D60;
+    border-top: 1px solid #205C2E;
     position: absolute;
     top: 50%;
     left: 0;
     width: 100%;
     z-index: -1;
+}
+.slider {
+    overflow-y: hidden;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.schedule-tab h3 .fa {
+    text-decoration: none;
+    float: right;
+    font-size: 3.1rem;
+    padding: .5rem .1rem .5rem .8rem;
+    background-color: #fff;
+    color: #b7baba;
+}
+h3.slider-control {
+    cursor: pointer;
 }
 
 .session-detail {
@@ -426,7 +445,7 @@ header a {
 #show-full-schedule {
     display: block;
     font-size: 2rem;
-    color: #B94D60;
+    color: #205C2E;
     margin-bottom: 2rem;
 }
 
@@ -480,6 +499,31 @@ header a {
 }
 
 
+.loading span {
+    animation-name: pulse;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    font-size: 150%;
+}
+.loading span:nth-child(2) {
+    animation-delay: .2s;
+}
+.loading span:nth-child(3) {
+    animation-delay: .4s;
+}
+@keyframes pulse {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     html {
         font-size: 5px;
@@ -510,7 +554,7 @@ header a {
     }
     .session-list-item,
     .session-detail .header {
-        padding: 2rem;
+        padding: 3rem;
     }
     .session-facilitators:before {
         top: 2px;
