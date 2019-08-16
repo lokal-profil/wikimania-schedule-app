@@ -447,7 +447,7 @@ function Schedule(options) {
         schedule.addCaptionOverline();
 
         var filterForm = '<div id="filter-form">\
-                <label for="list-filter">Search names, facilitators, spaces, pathways, and descriptions:</label>\
+                <label for="list-filter">Search names, facilitators, spaces and descriptions:</label>\
                 <input class="filter" type="text" id="list-filter" />\
             </div>';
         $(filterForm).appendTo(schedule.$container);
