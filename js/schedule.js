@@ -6,6 +6,7 @@ function Schedule(options) {
         // when you create a Schedule() instance on the page
         schedule.sourceJSON = 'sessions.json';
         schedule.spacesJSON = 'spaces.json';
+        schedule.localStoreName = 'mozfest2015_saved_sessions';
         schedule.$container = $('#schedule');
         schedule.$toggles = $('<ul>').appendTo('#schedule-controls');
         schedule.$pageLinks = $('#page-links');
@@ -26,8 +27,8 @@ function Schedule(options) {
         // check for saved sessions in localStorage. Because localStorage only
         // takes strings, split on commas so we get an array of session IDs
         if (Modernizr.localstorage) {
-            localStorage['mozfest2015_saved_sessions'] = localStorage['mozfest2015_saved_sessions'] || '';
-            schedule.savedSessionIDs = _.compact(localStorage['mozfest2015_saved_sessions'].split(',')) || [];
+            localStorage[schedule.localStoreName] = localStorage[schedule.localStoreName] || '';
+            schedule.savedSessionIDs = _.compact(localStorage[schedule.localStoreName].split(',')) || [];
         }
 
         // add UI elements
@@ -705,7 +706,7 @@ function Schedule(options) {
                 }
             }
             // stash the list as a string in localStorage
-            localStorage['mozfest2015_saved_sessions'] = schedule.savedSessionIDs.join();
+            localStorage[schedule.localStoreName] = schedule.savedSessionIDs.join();
             // update the data associated with this user's favorites
             schedule.updateSavedSessionList();
         });
