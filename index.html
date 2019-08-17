@@ -179,7 +179,7 @@
                 <div class="meta">
                     <% if (session.start) { %>
                     <div class="session-time">
-                        <% if (session.day) { %><%= session.day %>, <% } %><%= session.start %>
+                        <% if (session.day) { %><%= session.day %>, <% } %><%= session.start %> &ndash; <%= session.end %>
                     </div>
                     <% } %>
                     <% if (session.space || session.location) { %>
