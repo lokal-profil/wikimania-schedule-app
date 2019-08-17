@@ -199,6 +199,11 @@
                         <%= smartypants(session.facilitators) %>
                     </div>
                     <% } %>
+                    <% if (session.notes_url) { %>
+                    <div class="session-url">
+                        <a href="<%= session.notes_url %>">Session details</a>
+                    </div>
+                    <% } %>
                 </div>
                 <% if (session.description) { %>
                 <div class="session-description">

@@ -348,7 +348,8 @@ h3.slider-control {
 .session-facilitators,
 .session-time,
 .session-space-and-location,
-.session-pathways {
+.session-pathways,
+.session-url {
     position: relative;
     padding-left: 25px;
 }
@@ -356,7 +357,8 @@ h3.slider-control {
 .session-facilitators:before,
 .session-time:before,
 .session-space-and-location:before,
-.session-pathways:before {
+.session-pathways:before,
+.session-url:before {
     display: block;
     content: "";
     background-size: 20px auto;
@@ -384,6 +386,11 @@ h3.slider-control {
 .session-pathways:before {
     background-image: url(../img/icon-pathway.svg);
     top: 4px;
+}
+
+.session-url:before {
+    background-image: url(../img/icon-link.svg);
+    top: 3px;
 }
 
 .session-length-short {
@@ -569,6 +576,10 @@ h3.slider-control {
     }
 
     .session-pathways:before {
+        top: 2px;
+    }
+
+    .session-url:before {
         top: 2px;
     }
 }
