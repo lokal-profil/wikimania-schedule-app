@@ -390,7 +390,7 @@ h3.slider-control {
 
 .session-url:before {
     background-image: url(../img/icon-link.svg);
-    top: 3px;
+    top: 5px;
 }
 
 .session-length-short {
